@@ -40,9 +40,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </RouterProvider>
   </Provider>
 );
-
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-// )

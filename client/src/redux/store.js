@@ -8,8 +8,9 @@ export const store = configureStore({
   preloadedState: loadFromLocalStorage()
 });
 
-function saveToLocalStorage(state) {
 
+//  store in local storage
+function saveToLocalStorage(state) {
   try {
       const serialState = JSON.stringify(state)
       localStorage.setItem("reduxStore", serialState)
@@ -19,7 +20,6 @@ function saveToLocalStorage(state) {
 }
 
 function loadFromLocalStorage() {
-
   try {
       const serialisedState = localStorage.getItem("reduxStore");
       if (serialisedState === null) return undefined;

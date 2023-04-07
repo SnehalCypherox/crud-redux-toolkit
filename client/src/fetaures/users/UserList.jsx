@@ -25,7 +25,6 @@ const UserList = () => {
     }
     
     const deleteAllUsers = (payload) => {
-        console.log(payload);
         dispatch(removeUser(payload))
     }
     const renderCard = () => users.map((user) => {
@@ -37,9 +36,9 @@ const UserList = () => {
                 </div>
                 <div className="mt-3">
                     <Link to={`edit-user/${user.id}`}>
-                        <button className="bg-white text-black px-2 py-1 rounded-sm m-1">edit</button>
+                        <button className="bg-black text-white px-2 py-1 rounded-sm m-1">edit</button>
                     </Link>
-                    <button onClick={() => handleDeleteUser(user.id)} className="bg-white text-black px-2 py-1 rounded-sm m-1">delete</button>
+                    <button onClick={() => handleDeleteUser(user.id)} className="bg-black text-white px-2 py-1 rounded-sm m-1">delete</button>
                 </div>
             </div>
         )
@@ -51,8 +50,7 @@ const UserList = () => {
                 <Link to='/add-user'>
                     <Button>Add User</Button>
                 </Link>
-                <button className='delete-btn' onClick={() => {deleteAllUsers()}}>Delete All User</button>
-            </div>
+                <button className='delete-btn bg-blue-500 text-white font-bold py-2 px-4 rounded mt-5' onClick={() => {deleteAllUsers()}}>Delete All User</button>            </div>
 
             <div className="grid grid-cols-2 gap-5 m-5">
                 {users.length ? renderCard() : <p>No User</p>}
